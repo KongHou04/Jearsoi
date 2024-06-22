@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alef:wght@400;700&family=Kosugi+Maru&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Tokyo+Zoo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One&family=Londrina+Shadow&family=Plaster&family=Ribeye+Marrow&family=Zen+Tokyo+Zoo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Akronim&family=Briem+Hand:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --primary-color: rgba(228,197,144,1);
+    --color-one: rgba(235, 232, 227, 1);
+    --color-one-25: rgba(235, 232, 227, 0.25);
+    --color-one-5: rgba(235, 232, 227, 0.05);
+    --color-two: rgb(48, 48, 48);
+    --color-three: rgb(193, 193, 193);
+    --background-one: rgb(35, 35, 35);
+    --background-two: rgb(24, 24, 24);
+    --background-three: rgb(43, 43, 43);
+    --background-four: rgb(33, 37, 41);
+}
+
+.body{
+    background-color: var(--color-one);
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color); /* Màu của thumb */
+}
+::-webkit-scrollbar-track {
+    background: var(--background-two);
+}
+
+.ff-roboto{
+    font-family: 'Roboto';
+}
+
+.ff-jost{
+    font-family: 'Jost' !important;
+}
+
+.ff-alef{
+    font-family: 'Alef';
+}
+
+.hover-bg-1:hover{
+    background-color: #32323229 !important;
+    cursor: pointer;
+}
+
+
+.crud-form{
+    width: 50%;
+
+    label{
+        font-size: 14.5px;
+    }
+    input, textarea, select{
+        background-color: rgba(55, 65, 81, 1) !important;
+        color: var(--color-one) !important;
+        border-color: var(--color-one-25) !important;
+        font-size: 0.875rem !important;
+    }
+    input::placeholder, textarea::placeholder{
+        color: #6a6a6a  !important;
+    }
+    
+    input:focus, textarea:focus, select:focus{
+        box-shadow: 0 0 0 1.25px #1e66bf;
+    }
+
+    input::-webkit-file-upload-button{
+        background-color: rgb(90, 94, 100)!important;
+        color: var(--color-one) !important;
+    }
+
+
+    textarea{
+        height: 100px;
+    }
+
+    button{
+        font-size: 15px;
+        font-family: 'Jost';
+    }
+}
+
+.app-modal{
+    background-color: var(--background-one);
+    border: 1px solid var(--color-one-25);
+    color: var(--color-one);
+    border-radius: 5px;
+    overflow: hidden;
+
+    .modal-header, .modal-body, .modal-footer{
+        border: none;
+    }
+    .modal-header, .modal-body{
+        border-bottom: 1px solid var(--color-one-25)
+    } 
+    .modal-footer button{
+        font-family: 'Jost';
+    }
+    .close-btn{
+        display: flex;
+        flex-direction: column;
+        border: none;
+        outline: none;
+        box-shadow: none;
+        margin-left: auto;
+        background: transparent;
+        span{
+            width: 25px;
+            height: 3px;
+            margin: 3.5px 0;
+            background-color: var(--color-one);
+            transition: 0.5s;
+            border-radius: 2px;
+        }
+        span:nth-child(1){
+            transform: translateY(10px) rotate(45deg);
+        }
+        span:nth-child(2){
+            opacity: 0;
+        }
+        span:nth-child(3){
+            transform: translateY(-10px) rotate(-45deg);
+        }
+    }
+}
+
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';

@@ -1,0 +1,117 @@
+<button
+  class="btn btn-primary d-flex align-items-center"
+  (click)="switchToListView()"
+>
+  <i class="fa-solid fa-arrow-left align-middle"></i>
+  <span class="mb-0 ms-2 ff-roboto">Go back</span>
+</button>
+
+<div class="flex-container">
+  <form
+    class="my-5 crud-form"
+    (ngSubmit)="onSubmit($event)"
+    #categoryForm="ngForm"
+  >
+    <h5 class="mb-4" style="font-family: 'Roboto'">Add a new category</h5>
+    <div class="mb-4">
+      <label for="add-category-name" class="form-label">Category Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="add-category-name"
+        name="add-category-name"
+        placeholder="Type category name"
+        required
+        [(ngModel)]="category.name"
+      />
+    </div>
+    <div class="mb-4">
+      <label for="add-category-status" class="form-label">Status</label>
+      <select
+        class="form-select form-item filter-input"
+        id="add-category-status"
+        name="add-category-status"
+        aria-label="Default select example"
+        required
+        [(ngModel)]="category.status"
+      >
+        <option value="0" selected>Operating</option>
+        <option value="1">Closed</option>
+      </select>
+    </div>
+    <div class="mb-4">
+      <label for="add-category-description" class="form-label"
+        >Description</label
+      >
+      <textarea
+        class="form-control"
+        id="add-category-description"
+        name="add-category-description"
+        placeholder="Your description here"
+        [(ngModel)]="category.description"
+      ></textarea>
+    </div>
+    <div class="mt-5">
+      <button type="submit" #submitBtn class="btn btn-success d-none">
+        Submit
+      </button>
+      <button
+        type="button"
+        class="btn btn-success px-5"
+        (click)="openCreateModal()"
+      >
+        Create
+      </button>
+    </div>
+  </form>
+</div>
+
+<ng-template #createConfirmModal let-modal>
+  <div class="app-modal">
+    <div class="modal-header">
+      <h5 class="modal-title">Confirm Creation</h5>
+      <button
+        type="button"
+        class="close-btn"
+        (click)="modal.dismiss('Cross click')"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="fw-bold">Are you sure you want to create new category</div>
+      <div class="mt-2" style="font-size: 14px">
+        <span> This category will be added into the restaurant database </span>
+        <span class="text-info"
+          >You can update/delete this category later.</span
+        >
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button
+        type="button"
+        class="btn btn-secondary"
+        (click)="modal.dismiss('Cancel click')"
+      >
+        Cancel
+      </button>
+      <button
+        type="button"
+        class="btn btn-success"
+        (click)="confirmCreate(modal)"
+      >
+        Create
+      </button>
+    </div>
+  </div>
+</ng-template>
+
+<div
+  *ngIf="notificationVisible"
+  style="position: fixed; right: 20px; bottom: 20px"
+>
+  <app-notification
+    [title]="notification.title"
+    [message]="notification.message"
+  ></app-notification>
+</div>

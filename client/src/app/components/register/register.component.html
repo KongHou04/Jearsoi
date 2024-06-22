@@ -1,0 +1,101 @@
+<div class="main-container">
+  <div class="background-container">
+    <img src="assets/images/backgrounds/5.jpg" alt="" />
+  </div>
+
+  <div class="container" style="padding: 220px 0">
+    <div class="row m-0">
+      <div class="col-3"></div>
+      <div class="col-12 col-lg-6">
+        <div class="">
+          <form class="px-2 px-md-0" action="">
+            <h1 class="text-center">CREATE NEW ACCOUNT</h1>
+            <p class="mb-5">
+              Already have an account!
+              <a class="text-decoration-underline" routerLink="/login"
+                >Sign in now</a
+              >
+            </p>
+            <div class="mb-5">
+              <input
+                type="text"
+                class="form-control"
+                id="customer-name"
+                name="customer-name"
+                [(ngModel)]="registerModel.fullName"
+                placeholder="Full Name"
+              />
+            </div>
+            <div class="mb-5">
+              <input
+                type="email"
+                class="form-control"
+                id="customer-email"
+                name="customer-email"
+                [(ngModel)]="registerModel.email"
+                placeholder="Email"
+              />
+            </div>
+            <div class="mb-5">
+              <input
+                type="tel"
+                class="form-control"
+                id="customer-phone"
+                name="customer-phone"
+                [(ngModel)]="registerModel.phoneNumber"
+                placeholder="Phone"
+              />
+            </div>
+            <div class="mb-5">
+              <input
+                type="password"
+                class="form-control"
+                id="customer-phone"
+                name="customer-phone"
+                [(ngModel)]="registerModel.password"
+                placeholder="Password"
+              />
+            </div>
+            <div class="mb-5">
+              <input
+                type="password"
+                class="form-control"
+                id="confirmPassword"
+                name="confirmPassword"
+                [(ngModel)]="registerModel.confirmPassword"
+                placeholder="Confirm password"
+              />
+            </div>
+
+            <label class="cl-checkbox mb-5">
+              <input class="accept-checkbox" checked="" type="checkbox" />
+              <span>
+                Accept all
+                <a class="text-decoration-underline" href=""
+                  >terms and conditions</a
+                >
+              </span>
+            </label>
+
+            <div class="mb-5">
+              <button (click)="register()">Sign Up</button>
+            </div>
+
+            <div class="d-flex justify-content-center gap-3 optional-login-way">
+              <a href="">
+                <i class="fa-brands fa-google"></i>
+              </a>
+              <a href="">
+                <i class="fa-brands fa-x-twitter"></i>
+              </a>
+              <a href="">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-3"></div>
+    </div>
+  </div>
+</div>

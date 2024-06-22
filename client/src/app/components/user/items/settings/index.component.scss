@@ -1,0 +1,56 @@
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #212121;
+    color: var(--color-one);
+    padding: 20px 20px;
+    border-color: var(--color-one-5);
+    margin-top: 20px;
+    transition:  .6s;
+    cursor: pointer;
+    .img-container{
+        width: 180px;
+        height: 180px;
+        margin-top: -40px;
+        border-radius: 5%;
+        overflow: hidden;
+        box-shadow: 1px 1px 10px #97979727;
+        transition: inherit;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: inherit;
+        }
+    }
+    
+    h5{
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .role{
+        color: #7d7d7d;
+        text-align: center;
+    }
+
+    .email{
+        color: #b5b5b5;
+        text-align: center;
+        font-size: 13px;
+        margin-top: 10px;
+    }
+
+}
+
+.card:hover{
+    box-shadow: 1px 1px 6px #44444427;
+    .img-container{
+        transform: rotateZ(2deg);
+        img{
+            transform: scale(1.03);
+        }
+    }
+}

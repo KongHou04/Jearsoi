@@ -1,0 +1,286 @@
+.topbar {
+    box-sizing: border-box;
+    font-family: "Jost", sans-serif;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(205, 205, 205, 0.3);
+    transition: 0.6s ease;
+    // color: var(--color-one);
+    color: var(--color-one);
+
+    .topbar-container {
+        display: flex;
+        height: 55px;
+        align-items: center !important;
+        padding: 0 40px !important;
+        font-size: 14px;
+
+        .icon {
+            margin-right: 5px;
+            font-size: 12px;
+        }
+
+        div:nth-child(2) {
+            margin-left: 40px;
+        }
+
+        div:nth-child(3) {
+            margin-left: auto;
+        }
+
+        div:nth-child(4) {
+            margin-left: 40px;
+        }
+    }
+}
+
+address {
+    font-style: normal;
+}
+
+.contact-info:hover {
+    cursor: pointer;
+    color: var(--primary-color);
+}
+
+.logo {
+    text-transform: uppercase;
+    font-family: "Alumni Sans Inline One", sans-serif;
+    font-size: 45px;
+    color: var(--primary-color);
+    line-height: 0.8;
+}
+
+.navbar {
+    transition: 0.4s ease;
+    height: 90px;
+
+    .header-container {
+        display: flex;
+        padding: 0 40px;
+        width: 100%;
+    }
+
+    .navbar-nav>li {
+        padding: 0 0.8rem;
+        .nav-link {
+            padding: 0 0.2rem;
+            position: relative;
+            color: var(--color-one);
+            text-transform: uppercase;
+            font-family: "Zen Tokyo Zoo";
+            font-size: 13px;
+        }
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: auto;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: ease 0.5s all;
+        }
+        .nav-link:hover::after {
+            left: 0;
+            right: auto;
+            width: 100%;
+            text-shadow: 0 0 1px #69d5ff, 0 0 1px #69d5ff, 0 0 1px #69d5ff;
+        }
+    }
+
+    // search bar
+    form {
+        input {
+            font-family: 'Jost';
+            font-size: 15px;
+            width: 250px;
+            background-color: transparent;
+            border-radius: 2px;
+            border-color: var(--color-one-25);
+            color: var(--primary-color);
+        }
+    
+        input::placeholder {
+            color: var(--color-one);
+        }
+    
+        input:focus {
+            box-shadow: none;
+            border-color: var(--primary-color);
+        }
+    }
+}
+
+
+
+
+
+.header-offcanvas {
+    background-color: var(--background-one);
+    color: var(--color-one);
+
+    .close-btn {
+        display: flex;
+        flex-direction: column;
+        border: none;
+        outline: none;
+        box-shadow: none;
+        margin-left: auto;
+        background: transparent;
+
+        span {
+            width: 25px;
+            height: 3px;
+            margin: 3.5px 0;
+            background-color: var(--primary-color);
+            transition: 0.5s;
+            border-radius: 2px;
+        }
+    }
+
+    .close-btn>span:nth-child(1) {
+        transform: translateY(10px) rotate(45deg);
+    }
+
+    .close-btn>span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .close-btn>span:nth-child(3) {
+        transform: translateY(-10px) rotate(-45deg);
+    }
+
+    .nav-link {
+        font-family: 'Zen Tokyo Zoo';
+        text-transform: uppercase;
+        margin: 20px auto;
+        text-align: center;
+    }
+}
+
+
+.nav-icon {
+    i {
+        font-size: 24px;
+        color: var(--primary-color);
+    }
+    align-self: center;
+}
+
+.cart-link {
+    position: relative;
+
+    .cart-item-length {
+        position: absolute;
+        height: 17px;
+        width: 17px;
+        background-color: rgb(208, 45, 45);
+        font-size: 11px;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--color-one);
+        border-radius: 50%;
+        right: -4px;
+        bottom: -4px;
+    }
+}
+
+.user-avatar{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+.dropdown-toggle::after {
+    display: none !important;
+}
+.custom-login-dropdown{
+    background-color: var(--background-one);
+    margin-top: 15px;
+    .dropdown-item{
+        color: var(--color-one);
+    }
+    .dropdown-item:hover{
+        background-color: var(--background-two);
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar .navbar-collapse {
+        border-top: 2px solid;
+        border-bottom: 2px solid;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+    }
+
+    .navbar .navbar-nav>li {
+        padding: 0;
+    }
+
+    .navbar .navbar-nav>li+li {
+        border-top: 1px solid;
+    }
+
+    .navbar .navbar-nav>li>.nav-link {
+        line-height: 50px;
+        text-align: center;
+        padding: 0;
+    }
+
+    .navbar .navbar-nav>li>.nav-link::after {
+        display: none;
+    }
+
+    .navbar-toggler {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border: none;
+        outline: none;
+        box-shadow: none;
+        margin-left: auto;
+        margin-top: -8px;
+        padding: 0;
+    }
+
+    .navbar-toggler>span {
+        width: 25px;
+        height: 3px;
+        margin: 4px 0;
+        background-color: var(--primary-color);
+        transition: 0.5s;
+        border-radius: 2px;
+    }
+
+    .navbar-toggler:not(.collapsed)>span:nth-child(1) {
+        transform: translateY(10px) rotate(45deg);
+    }
+
+    .navbar-toggler:not(.collapsed)>span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .navbar-toggler:not(.collapsed)>span:nth-child(3) {
+        transform: translateY(-10px) rotate(-45deg);
+    }
+}
+
+@media (max-width: 576px){
+    .navbar > .header-container{
+        padding: 0 20px;
+    }
+}

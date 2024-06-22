@@ -1,0 +1,14 @@
+<div class="card mb-4">
+  <img *ngIf="productImgUrl" [src]="productImgUrl" class="rounded" />
+  <img *ngIf="!productImgUrl" [src]="defaultImgUrl" alt="">
+  <div class="card-body">
+    <h5 *ngIf="product.name" class="card-title">{{product.name}}</h5>
+    <h5 *ngIf="!product.name" class="card-title">Product name</h5>
+    <p *ngIf="product.description"class="card-text">
+      {{product.description}}
+    </p>
+    <p *ngIf="!product.description"class="card-text">
+      This is a delicious dish for your lunch time!
+    </p>
+  </div>
+</div>

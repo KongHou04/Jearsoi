@@ -1,0 +1,29 @@
+<div class="card">
+  <div class="card-header">
+    <img *ngIf="productImgUrl" [src]="productImgUrl" class="rounded" />
+    <img *ngIf="!productImgUrl" [src]="defaultImgUrl" alt="">
+  </div>
+  <div class="card-body">
+    <h5 *ngIf="product.name" class="card-title">{{product.name}}</h5>
+    <h5 *ngIf="!product.name" class="card-title">Product name</h5>
+    <p *ngIf="product.description"class="card-text">
+      {{product.description}}
+    </p>
+    <p *ngIf="!product.description"class="card-text">
+      This is a delicious dish for your lunch time!
+    </p>
+    <div *ngIf="product.price" class="price-section">
+      <span>{{product.price}}</span>
+      <span class="first-price">5.00</span>
+    </div>
+    <div *ngIf="!product.price" class="price-section">
+      <span>3.99</span>
+      <span class="first-price">5.00</span>
+    </div>
+    <div class="card-controls">
+      <div>
+        <button>Add item</button>
+      </div>
+    </div>
+  </div>
+</div>

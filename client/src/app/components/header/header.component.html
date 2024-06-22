@@ -1,0 +1,178 @@
+<div class="fixed-top">
+  <div id="topbar" class="topbar d-none d-md-block">
+    <div class="topbar-container">
+      <address class="mb-0 d-none d-lg-block">
+        <span class="icon" style="margin-right: 0">
+          <i class="fa-solid fa-location-dot"></i>
+        </span>
+        <span>
+          Restaurant Jaersoi, Delicious street, Amazing city, New York 2024, US
+        </span>
+      </address>
+      <div class="d-none d-lg-block">
+        <span class="icon">
+          <i class="fa-solid fa-clock"></i>
+        </span>
+        <span>Daily: 8:00 AM to 10:00 PM</span>
+      </div>
+      <div class="contact-info">
+        <span class="icon">
+          <i class="fa-solid fa-phone"></i>
+        </span>
+        <span>+99 332 214 567</span>
+      </div>
+      <div class="contact-info">
+        <span class="icon">
+          <i class="fa-solid fa-envelope"></i>
+        </span>
+        <span>Jaersoi&#64;gmail.com</span>
+      </div>
+    </div>
+  </div>
+  <nav id="navbar" class="navbar navbar-expand-lg ff-priamry">
+    <div class="header-container">
+      <a class="navbar-brand fw-medium focus-primary" href="#">
+        <span class="logo fs-22"> Jear<span>soi</span></span>
+      </a>
+      <button
+        class="navbar-toggler collapsed"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasExample"
+        aria-controls="offcanvasExample"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="d-block d-lg-none align-self-center" style="margin-top: -6px">
+        <a class="nav-icon ms-4" routerLink="/login">
+          <i class="fa-solid fa-user" style="font-size: 25px"></i>
+        </a>
+      </div>
+      <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav ms-auto me-4 fs-16">
+          <li>
+            <a class="nav-link active" routerLink="/">Home</a>
+          </li>
+          <li>
+            <a class="nav-link" routerLink="/menus">Menus</a>
+          </li>
+          <li>
+            <a class="nav-link active" routerLink="/history">Order</a>
+          </li>
+        </ul>
+
+        <form class="d-none d-md-block my-2 my-lg-0">
+          <input
+            type="email"
+            class="form-control"
+            id="product-name-search"
+            placeholder="What food do you need?"
+            [(ngModel)]="searchQuery"
+            name="searchQuery"
+            (keyup.enter)="searchProduct()"
+          />
+          <!-- <button class="login-button">Search</button> -->
+        </form>
+      </div>
+      <div class="d-none d-lg-flex">
+        <a class="nav-icon cart-link ms-4" routerLink="/cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span *ngIf="cartItemLength != 0" class="cart-item-length bg-danger">
+            <span *ngIf="cartItemLength < 100">{{ cartItemLength }}</span>
+            <span *ngIf="cartItemLength >= 100">!..</span>
+          </span>
+        </a>
+        <a class="nav-icon cart-link ms-4" routerLink="/login" *ngIf="!user">
+          <i class="fa-solid fa-user"></i>
+        </a>
+        <div class="nav-icon cart-link ms-4" *ngIf="user">
+          <a
+            class="nav-link dropdown-toggle no-affter"
+            href="#"
+            id="dropdownId"
+            data-bs-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            <div class="user-avatar">
+              <img src="assets/images/menus/2.jpg" alt="" /></div
+          ></a>
+          <div class="dropdown-menu dropdown-menu-end custom-login-dropdown" aria-labelledby="dropdownId">
+            <a class="dropdown-item" routerLink="/user">Manage</a>
+            <button class="dropdown-item" (click)="openLogoutModal()">Logout</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<div
+  class="offcanvas offcanvas-start header-offcanvas"
+  tabindex="-1"
+  id="offcanvasExample"
+  aria-labelledby="offcanvasExampleLabel"
+>
+  <div class="offcanvas-header">
+    <div class="logo mt-2">Jearsoi</div>
+    <button
+      type="button"
+      class="close-btn"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="navbar-nav ms-auto me-4 fs-16">
+      <li>
+        <a class="nav-link" routerLink="/">Home</a>
+      </li>
+      <li>
+        <a class="nav-link" routerLink="/menus">Menus</a>
+      </li>
+      <li>
+        <a class="nav-link" routerLink="/cart">Cart</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<ng-template #logoutConfirmModal let-modal>
+  <div class="app-modal">
+    <div class="modal-header">
+      <h5 class="modal-title">Confirm Logout</h5>
+      <button
+        type="button"
+        class="close-btn"
+        (click)="modal.dismiss('Cross click')"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="fw-bold">Are you sure you want to log out from this account</div>
+    </div>
+    <div class="modal-footer">
+      <button
+        type="button"
+        class="btn btn-secondary"
+        (click)="modal.dismiss('Cancel click')"
+      >
+        Cancel
+      </button>
+      <button
+        type="button"
+        class="btn btn-danger"
+        (click)="confirmLogout(modal)"
+      >
+        Logout
+      </button>
+    </div>
+  </div>
+</ng-template>

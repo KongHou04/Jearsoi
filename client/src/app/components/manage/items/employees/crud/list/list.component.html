@@ -1,0 +1,55 @@
+<div class="control-container z-3">
+    <button class="btn btn-success" >Refresh</button>
+    <button class="btn btn-primary" (click)="switchToAddView()">Add employee</button>
+    <input class="form-control ms-lg-auto" type="text" placeholder="Search Name" id="employee-keyname"/>
+  
+      <select
+        class="form-select form-item filter-input"
+        aria-label="Default select example"
+        id="employee-sort-option"
+      >
+        <option selected>Name: a - z</option>
+        <option value="1">Name: z - a</option>
+      </select>
+  </div>
+  
+  <div class="list-container row">
+    <div class="col-xl-3">
+        <div class="card" (click)="switchToDetailsView()">
+            <div class="img-container">
+                <img src="assets/images/employees/1.jpg" alt="">
+            </div>
+            <div class="information">
+              <h5>Vu Nguyen Cong Hau</h5>
+              <p class="role">Employee</p>
+              <p class="email">hauvncps35740&#64;fpt.edu.vn</p>
+              <div class="control-container">
+                  <button class="btn btn-primary" (click)="switchToUpdateView()">Update</button>
+              </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  
+  <div class="control-container z-3">
+    <nav class="ms-auto pagination-nav" aria-label="Page navigation example">
+      <ul class="pagination m-0">
+        <li class="page-item">
+          <a class="page-link" href="#"
+            ><span aria-hidden="true">&laquo;</span></a
+          >
+        </li>
+        <li class="page-item">
+          <a class="page-link active" href="#">1</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#"
+            ><span aria-hidden="true">&raquo;</span></a
+          >
+        </li>
+      </ul>
+    </nav>
+  </div>
+  

@@ -1,0 +1,211 @@
+.support-section{
+    position: relative;
+    background-color: var(--background-one);
+    padding: 100px 0;
+    overflow: hidden;
+
+    .support-form{
+        background-color: var(--background-two);
+        padding: 50px;
+        color: var(--color-one);
+        font-family: 'Jost';
+
+        h2{
+            color: var(--primary-color);
+        }
+
+        label{
+            margin-left: 10px;
+        }
+        input, select, textarea{
+            border-radius: 0;
+            background-color: var(--background-one);
+            border-color: var(--color-one-25);
+            color: var(--color-one);
+        }
+        input:focus,select:focus,textarea:focus{
+            box-shadow: none;
+            border-color: var(--primary-color);
+        }
+
+        button{
+            margin-top: 20px;
+            background-color: var(--primary-color);
+            border: none;
+            padding: 0.75rem 0;
+            width: 100%;
+            text-transform: uppercase;
+            columns: var(--color-two);
+        }
+    }
+
+    .right-img{
+        position: relative;
+        height: 100%;
+        .background-container{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+            img{
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+        .background-container::after{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            left: 0;
+            top: 0;
+        }
+    }
+
+    .decorating-background-item:nth-child(1){
+        animation: decorating-anim1 10s infinite ease;
+    }
+    .decorating-background-item:nth-child(2){
+        animation: decorating-anim2 8s infinite ease;
+    }
+}
+
+
+@keyframes decorating-anim1{
+    0%{
+        top: 0;
+    }
+    50%{
+        top: -40px;
+    }
+    100%{
+        top: 0;
+    }
+}
+
+@keyframes decorating-anim2{
+    0%{
+        transform: rotateZ(0);
+    }
+    50%{
+        transform: rotateZ(-10deg);
+    }
+    100%{
+        transform: rotateZ(0);
+    }
+}
+
+
+.footer{
+    background-image: url(../../../assets/images/backgrounds/2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 5 !important;
+    
+    .footer-container{
+        padding: 100px 40px !important;
+        color: var(--color-one);
+        z-index: 100 !important;
+        position: relative;
+
+        .subcribe-form{
+            text-align: center;
+            padding: 70px 30px;
+            background-color: var(--background-two);
+            h1{
+                font-family: "Alumni Sans Inline One", sans-serif;
+                font-size: 60px;
+                color: var(--primary-color);
+            }
+            .information{
+                font-family: 'Jost', sans-serif;
+                margin-top: 15px;
+                margin-bottom: 15px;
+                font-weight: 300;
+            }
+
+            h3{
+                margin-top: 70px;
+            }
+
+            form{
+                margin-top: 50px;
+                input{
+                    background-color: var(--background-one) !important;
+                    color: var(--color-one);
+                    border: 1px solid var(--color-one-25);
+                    height: 55px;
+                }
+                input::placeholder{
+                    color: var(--color-one);
+                }
+                input:focus{
+                    box-shadow: none;
+                    border: 1px solid var(--primary-color);
+                }
+                
+                button{
+                    height: 55px;
+                    border: 1px solid var(--primary-color);
+                    background-color: var(--primary-color);
+                    font-family: 'Jost';
+                    font-size: 18px;
+                }
+            }
+        }
+
+        .footer-nav{
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            row-gap: 30px;
+            font-family: 'Roboto';
+            font-size: 20px;
+            font-weight: 300;
+            a{
+                position: relative;
+                text-decoration: none;
+                color: var(--color-one);
+                padding: auto 0.4rem;
+                transition: 0.6s;
+            }
+            a::after{
+                content: '';
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                width: 0;
+                height: 4px;
+                border-top: 1px solid var(--primary-color);
+                border-bottom: 1px solid var(--primary-color);
+                transition: 0.6s;
+            }
+            a:hover{
+                color: var(--primary-color);
+            }
+            a:hover::after{
+                left: 0;
+                width: 100%;
+            }
+        }
+    }
+    
+}
+.footer::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 0 !important;
+}
+

@@ -1,0 +1,155 @@
+<div class="main-container">
+  <div class="background-container">
+    <img src="assets/images/slides/6.jpg" alt="" />
+  </div>
+
+  <div class="cart-container">
+    <div class="cart">
+      <div class="cart-header">
+        <div class="title">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span>Shopping Cart</span>
+        </div>
+      </div>
+      <div class="cart-body row gx-0">
+
+        <!-- cart details -->
+        <div class="col-lg-7">
+          <div class="cart-info-section cart-body-section">
+            <div class="item-list-section">
+              <h4>Order Summery</h4>
+
+              <div class="cart-item-container">
+                <div class="cart-item" *ngFor="let item of cart.orderDetails">
+                  <div class="cart-img">
+                    <img [src]="getImgUrl(item.product?.imgUrl)" alt="" />
+                  </div>
+                  <div class="cart-info">
+                    <h5>{{ item.productName }}</h5>
+                    <div class="mb-1">
+                      <button
+                        class="update-number-btn"
+                        (click)="decreaseProductQuantity(item.productId)"
+                      >
+                        <i class="fa-solid fa-minus"></i>
+                      </button>
+                      <span class="number">{{ item.quantity }}</span>
+                      <button
+                        class="update-number-btn"
+                        (click)="increaseProductQuantity(item.productId)"
+                      >
+                        <i class="fa-solid fa-plus"></i>
+                      </button>
+                      <span class="price ms-4">
+                        <span class="">$</span>
+                        <span class="ms-1">{{ item.unitPrice }}</span>
+                      </span>
+                    </div>
+                    <textarea
+                      class="ff-roboto form-control mb-2 note-area"
+                      placeholder="Note"
+                      >{{ item.note }}</textarea
+                    >
+                  </div>
+                  <div class="cart-close-btn">
+                    <button (click)="removeProductFromCart(item.productId)">
+                      <i class="fa-solid fa-xmark"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <form class="discount-section">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Coupon code</label
+              >
+              <div class="d-flex">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="exampleFormControlInput1"
+                />
+                <button class="ms-3">Apply</button>
+              </div>
+            </form>
+
+            <div class="summery-section">
+              <div class="summery-description">
+                <span class="name">Subtotal</span>
+                <span class="value">{{ cart.subTotal | number : "1.2-2" }}</span>
+              </div>
+              <div class="summery-description">
+                <span class="name">Discount</span>
+                <span class="value">{{ cart.discount | number : "1.2-2" }}</span>
+              </div>
+              <div class="summery-description fw-bold mb-0">
+                <span class="name">Total</span>
+                <span class="value">$ {{ cart.total | number : "1.2-2" }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- payment details -->
+        <div class="col-12 col-lg-5">
+          <form class="payment-section cart-body-section">
+            <h4 class="">Customer Details</h4>
+            <div class="mb-3">
+              <label for="customer-email" class="form-label"
+                >Customer Email</label
+              >
+              <input
+                [(ngModel)]="cart.email"
+                type="email"
+                class="form-control"
+                id="customer-email"
+                name="customer-email"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="customer-phone" class="form-label"
+                >Phone Number</label
+              >
+              <input
+                type="tel"
+                [(ngModel)]="cart.phone"
+                class="form-control"
+                id="customer-phone"
+                name="customer-phone"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="customer-address" class="form-label">Address</label>
+              <input
+                type="text"
+                [(ngModel)]="cart.address"
+                class="form-control"
+                id="customer-address"
+                name="customer-address"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="customer-note" class="form-label">Note</label>
+              <textarea
+                class="form-control"
+                [(ngModel)]="cart.note"
+                rows="2"
+                id="customer-note"
+                name="customer-note"
+              >
+              </textarea>
+            </div>
+            <div class="mt-5">
+              <button type="button" class="pay-btn" (click)="sendOrder()">
+                <span>Order </span>
+                <span>$</span>
+                <span>{{cart.total}}</span>
+              </button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

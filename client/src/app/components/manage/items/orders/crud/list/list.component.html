@@ -1,0 +1,338 @@
+<div class="control-container z-3">
+  <button class="btn btn-success" (click)="loadOrders()">Refresh</button>
+  <input
+    class="form-control ms-lg-auto"
+    type="text"
+    placeholder="Search Phone"
+    id="order-keyphone"
+    (input)="onSearchInput($event)"
+  />
+  <select
+    class="form-select form-item filter-input"
+    aria-label="Default select example"
+    id="order-byStatus"
+    (change)="onStatusFiltChange($event)"
+  >
+    <option value="all" selected>All status</option>
+    <option value="0">In queue</option>
+    <option value="1">In transmit</option>
+  </select>
+  <select
+    class="form-select form-item filter-input"
+    aria-label="Default select example"
+    id="order-sort-option"
+    (change)="onSortOptionChange($event)"
+  >
+    <option value="timeAsc" selected>Time: a - z</option>
+    <option value="timeDesc">Time: z - a</option>
+    <option value="totalAsc">Total: a - z</option>
+    <option value="totalDesc">Total: z - a</option>
+  </select>
+</div>
+
+<div class="list-container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col" style="width: 20%">Order Time</th>
+        <th class="text-end" scope="col" style="width: 15%">Phone number</th>
+        <th class="text-end" scope="col" style="width: 25%">Address</th>
+        <th class="text-end" scope="col" style="width: 15%">Total</th>
+        <th class="text-end" scope="col" style="width: 15%">Delivery</th>
+        <th class="text-end" scope="col" style="width: 15%">Payment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        class="hover-bg-1"
+        *ngFor="
+          let item of orders
+            | paginate : { itemsPerPage: itemsPerPage, currentPage: page };
+          let i = index
+        "
+        (click)="switchToDetailsView(item)"
+      >
+        <td>{{ item.orderTime | date : "dd/MM/yyyy  HH:mm" }}</td>
+        <td class="text-end">{{ item.phone }}</td>
+        <td class="text-end">{{ item.address }}</td>
+        <td class="text-end">{{ item.total }}</td>
+        <!-- <td class="text-end">{{item.status==0? "In queue" : "In transmit"}}</td> -->
+        <td class="action">
+          <button
+            *ngIf="item.deliveryStatus == 0"
+            class="action-btn"
+            (click)="openDeliverModal1($event, item)"
+          >
+            <i class="fa-solid fa-truck text-primary"></i>
+          </button>
+          <button *ngIf="item.deliveryStatus < 2" class="action-btn" (click)="openDeliverModal2($event, item)">
+            <i class="fa-regular fa-circle-check text-success"></i>
+          </button>
+          <button class="action-btn" (click)="openDeliverModal3($event, item)">
+            <i class="fa-solid fa-ban text-danger"></i>
+          </button>
+        </td>
+        <td class="action">
+          <button *ngIf="item.paymentStatus == 0"
+            class="action-btn"
+            (click)="openPayModal($event, item)"
+          >
+            <i class="fa-solid fa-credit-card text-success"></i>
+          </button>
+          <button
+            class="action-btn"
+            (click)="openDeleteModal($event, item)"
+          >
+          <i class="fa-solid fa-ban text-danger"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="control-container z-3">
+  <nav class="ms-auto pagination-nav" aria-label="Page navigation example">
+    <ul class="pagination m-0">
+      <li class="page-item" (click)="changePage(1)">
+        <a class="page-link"><span aria-hidden="true">&laquo;</span></a>
+      </li>
+      <li class="page-item" *ngIf="page - 1 > 0" (click)="changePage(page - 1)">
+        <a class="page-link">{{ page - 1 }}</a>
+      </li>
+      <li class="page-item" (click)="changePage(page)">
+        <a class="page-link active">{{ page }}</a>
+      </li>
+      <li
+        class="page-item"
+        *ngIf="page + 1 <= maxPageNumber"
+        (click)="changePage(page + 1)"
+      >
+        <a class="page-link">{{ page + 1 }}</a>
+      </li>
+      <li class="page-item" (click)="changePage(maxPageNumber)">
+        <a class="page-link"><span aria-hidden="true">&raquo;</span></a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<ng-template #deliverConfirmModal1 let-modal>
+  <div class="app-modal">
+    <div class="modal-header">
+      <h5 class="modal-title">Confirm Delivery</h5>
+      <button
+        type="button"
+        class="close-btn"
+        (click)="modal.dismiss('Cross click')"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="fw-bold">
+        Are you sure you want to change delivery status of this order
+        <span class="text-success fw-bold">"{{ selectedOrder.orderId }}"</span>
+        ?
+      </div>
+      <div class="mt-2" style="font-size: 14px">
+        <span>
+          After this, customer cannot make change on this order anymore.
+        </span>
+        <span class="text-danger"> This operation can not be undone. </span>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button
+        type="button"
+        class="btn btn-secondary"
+        (click)="modal.dismiss('Cancel click')"
+      >
+        Cancel
+      </button>
+      <button
+        type="button"
+        class="btn btn-primary"
+        (click)="confirmDeliver1(modal, updateOrderStatus)"
+      >
+        Change status
+      </button>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #deliverConfirmModal2 let-modal>
+  <div class="app-modal">
+    <div class="modal-header">
+      <h5 class="modal-title">Confirm Delivery</h5>
+      <button
+        type="button"
+        class="close-btn"
+        (click)="modal.dismiss('Cross click')"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="fw-bold">
+        Are you sure you want to change delivery status of this order
+        <span class="text-success fw-bold">"{{ selectedOrder.orderId }}"</span>
+        ?
+      </div>
+      <div class="mt-2" style="font-size: 14px">
+        <span>
+          After this, customer cannot make change on this order anymore.
+        </span>
+        <span class="text-danger"> This operation can not be undone. </span>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button
+        type="button"
+        class="btn btn-secondary"
+        (click)="modal.dismiss('Cancel click')"
+      >
+        Cancel
+      </button>
+      <button
+        type="button"
+        class="btn btn-primary"
+        (click)="confirmDeliver2(modal, updateOrderStatus)"
+      >
+        Change status
+      </button>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #deliverConfirmModal3 let-modal>
+  <div class="app-modal">
+    <div class="modal-header">
+      <h5 class="modal-title">Confirm Delivery</h5>
+      <button
+        type="button"
+        class="close-btn"
+        (click)="modal.dismiss('Cross click')"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="fw-bold">
+        Are you sure you want to change delivery status of this order
+        <span class="text-success fw-bold">"{{ selectedOrder.orderId }}"</span>
+        ?
+      </div>
+      <div class="mt-2" style="font-size: 14px">
+        <span>
+          After this, customer cannot make change on this order anymore.
+        </span>
+        <span class="text-danger"> This operation can not be undone. </span>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button
+        type="button"
+        class="btn btn-secondary"
+        (click)="modal.dismiss('Cancel click')"
+      >
+        Cancel
+      </button>
+      <button
+        type="button"
+        class="btn btn-primary"
+        (click)="confirmDeliver3(modal, updateOrderStatus)"
+      >
+        Change status
+      </button>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #payConfirmModal let-modal>
+  <div class="app-modal">
+    <div class="modal-header">
+      <h5 class="modal-title">Confirm payment</h5>
+      <button
+        type="button"
+        class="close-btn"
+        (click)="modal.dismiss('Cross click')"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="fw-bold">
+        Are you sure you want to order
+        <span class="text-success fw-bold">"{{ selectedOrder.orderId }}"</span>
+        ?
+      </div>
+      <div class="mt-2" style="font-size: 14px">
+        <p>Total: ${{ selectedOrder.total }}</p>
+        <span> After this, you cannot change order status anymore. </span>
+        <span class="text-danger"> This operation can not be undone. </span>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button
+        type="button"
+        class="btn btn-secondary"
+        (click)="modal.dismiss('Cancel click')"
+      >
+        Cancel
+      </button>
+      <button
+        type="button"
+        class="btn btn-primary"
+        (click)="confirmPay(modal, updatePaymentOrderStatus)"
+      >
+        Pay
+      </button>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #deleteConfirmModal let-modal>
+  <div class="app-modal">
+    <div class="modal-header">
+      <h5 class="modal-title">Confirm Deletion</h5>
+      <button
+        type="button"
+        class="close-btn"
+        (click)="modal.dismiss('Cross click')"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="fw-bold">
+        Are you sure you want to cancel order
+        <span class="text-success fw-bold">"{{ selectedOrder.orderId }}"</span>
+        ?
+      </div>
+      <div class="mt-2" style="font-size: 14px">
+        <span>
+          All items and customer information associated to this order will be
+          permanently deleted.
+        </span>
+        <span class="text-danger"> This operation can not be undone. </span>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button
+        type="button"
+        class="btn btn-secondary"
+        (click)="modal.dismiss('Cancel click')"
+      >
+        Cancel
+      </button>
+      <button
+        type="button"
+        class="btn btn-danger"
+        (click)="confirmDelete(modal, updatePaymentOrderStatus)"
+      >
+        Delete
+      </button>
+    </div>
+  </div>
+</ng-template>

@@ -1,0 +1,34 @@
+.item-list-container{
+    max-height: 584px;
+    overflow-y: scroll;
+}
+table{
+    font-size: 14px;
+    
+    tr, th, td{
+        background: transparent;
+        color: var(--color-one) !important;
+        border-bottom-color: var(--color-one-25);
+    }
+    .action{
+        text-align: right;
+        .action-btn{
+            border: none;
+            background: transparent;
+            .update-btn{
+                color:rgb(51, 126, 193);
+                transition: .6s;
+            }
+            .delete-btn{
+                color: rgb(192, 51, 51);
+                transition: .6s;
+            }
+            .update-btn:hover{
+                color:rgb(21, 85, 141)
+            }
+            .delete-btn:hover{
+                color: rgb(144, 23, 23);
+            }
+        }
+    }
+}

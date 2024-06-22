@@ -1,0 +1,120 @@
+<button
+  class="btn btn-primary d-flex align-items-center"
+  (click)="switchToListView()"
+>
+  <i class="fa-solid fa-arrow-left align-middle"></i>
+  <span class="mb-0 ms-2 ff-roboto">Go back</span>
+</button>
+
+<div *ngIf="!isCategoryDeleted">
+
+  <div class="flex-container">
+    <div class="my-5 crud-form" action="">
+      <h5 class="mb-4" style="font-family: 'Roboto'">Category Information</h5>
+      <div class="mb-4">
+        <label for="details-category-name" class="form-label"
+          >Category Name</label
+        >
+        <input
+          type="email"
+          class="form-control"
+          id="details-category-name"
+          value="{{ category.name }}"
+          disabled
+        />
+      </div>
+      <div class="mb-4">
+        <label for="details-category-status" class="form-label">Status</label>
+        <select
+          class="form-select form-item filter-input"
+          id="details-category-status"
+          aria-label="Default select example"
+          disabled
+        >
+          <option value="0" selected>Operating</option>
+          <option value="1">Closed</option>
+        </select>
+      </div>
+      <div class="mb-4">
+        <label for="details-category-description" class="form-label"
+          >Description</label
+        >
+        <textarea
+          class="form-control"
+          id="details-category-description"
+          placeholder="Your description here"
+          disabled
+          >{{ category.description }}</textarea
+        >
+      </div>
+      <div class="mt-5">
+        <button class="btn btn-primary" (click)="switchToUpdateView()">
+          Update
+        </button>
+        <button class="btn btn-danger ms-3" (click)="openDeleteModal()">
+          Delete
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #deleteConfirmModal let-modal>
+    <div class="app-modal">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirm Deletion</h5>
+        <button
+          type="button"
+          class="close-btn"
+          (click)="modal.dismiss('Cross click')"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="fw-bold">
+          Are you sure you want to delete
+          <span class="text-success fw-bold">"{{ category.name }}"</span>
+          category?
+        </div>
+        <div class="mt-2" style="font-size: 14px">
+          <span>
+            All products associated to this category will be permanently
+            deleted.
+          </span>
+          <span class="text-danger"> This operation can not be undone. </span>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          (click)="modal.dismiss('Cancel click')"
+        >
+          Cancel
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger"
+          (click)="confirmDelete(modal)"
+        >
+          Delete
+        </button>
+      </div>
+    </div>
+  </ng-template>
+
+</div>
+
+<div
+  *ngIf="notificationVisible"
+  style="position: fixed; right: 20px; bottom: 20px; z-index: 1000"
+>
+  <app-notification
+    [title]="notification.title"
+    [message]="notification.message"
+  ></app-notification>
+</div>
+
+<div class="my-5" *ngIf="isCategoryDeleted">
+  <h5>The category has been delete</h5>
+</div>

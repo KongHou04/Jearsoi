@@ -1,0 +1,25 @@
+<div [ngSwitch]="view">
+  <div *ngSwitchCase="'details'">
+    <category-details
+      [category]="selectedCategory"
+      (switchToListViewFunc)="setView('list')"
+      (switchToUpdateViewFunc)="switchToUpdate($event)"
+      ></category-details>
+  </div>
+  <div *ngSwitchCase="'add'">
+    <category-add (switchToListViewFunc)="setView('list')"></category-add>
+  </div>
+  <div *ngSwitchCase="'update'">
+    <category-update
+      [defaultCategory]="selectedCategory"
+      (switchToListViewFunc)="setView('list')"
+    ></category-update>
+  </div>
+  <div *ngSwitchDefault>
+    <category-list
+      (switchToAddViewFunc)="setView('add')"
+      (switchToUpdateViewFunc)="switchToUpdate($event)"
+      (switchToDetailsViewFunc)="switchToDetails($event)"
+    ></category-list>
+  </div>
+</div>

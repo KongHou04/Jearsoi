@@ -1,0 +1,125 @@
+<div class="row gx-5 gy-5 py-5">
+  <div class="col-lg-6">
+    <div class="crud-form w-100">
+      <h5 class="mb-4">Order Information</h5>
+      <div class="mb-4 row">
+        <div class="col-6">
+          <div class="form-div">Order Id</div>
+          <input
+            type="text"
+            class="form-control"
+            name="details-order-id"
+            value="{{order.orderId}}"
+            disabled
+          />
+        </div>
+        <div class="col-6">
+          <div class="form-div">Order time</div>
+          <input
+            type="text"
+            class="form-control"
+            name="details-order-time"
+            value="{{order.orderTime}}"
+            disabled
+          />
+        </div>
+      </div>
+      <div class="mb-4 row">
+        <div class="col-6">
+          <div class="form-div">Phone number</div>
+          <input
+            type="text"
+            class="form-control"
+            name="details-order-phone"
+            value="{{order.phone}}"
+            disabled
+          />
+        </div>
+        <div class="col-6">
+          <div class="form-div">Status</div>
+          <input
+            type="text"
+            class="form-control"
+            name="details-order-status"
+            value="{{getStatusString(order.deliveryStatus)}}"
+            disabled
+          />
+        </div>
+      </div>
+      <div class="mb-4">
+        <div class="form-div">Address</div>
+        <input
+          type="text"
+          class="form-control"
+          name="details-order-address"
+          value="{{order.address}}"
+          disabled
+          />
+      </div>
+      <div class="row mb-4">
+        <div class="col-6">
+          <div class="form-div">SubTotal</div>
+          <input
+            type="text"
+            class="form-control"
+            name="details-order-subTotal"
+            value="{{order.subTotal}}"
+            disabled
+          />
+        </div>
+        <div class="col-6">
+          <div class="form-div">Discount</div>
+          <input
+            type="text"
+            class="form-control"
+            name="details-order-discount"
+            value="{{order.discount}}"
+            disabled
+          />
+        </div>
+      </div>
+      <div class="mb-4">
+        <div class="form-div">Total</div>
+        <input
+          type="text"
+          class="form-control"
+          name="details-order-total"
+          value="{{order.total}}"
+          disabled
+          />
+      </div>
+      <div class="">
+        <div class="form-div">Note</div>
+        <textarea type="text" class="form-control" name="details-order-note" disabled>{{order.note}}</textarea>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6 position-relative">
+    <h5 class="mb-4">Item list</h5>
+    <div class="item-list-container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col" style="width: 7.5%">#</th>
+            <th scope="col" style="width: 47.5%">Name</th>
+            <th scope="col" style="width: 15%">Price</th>
+            <th scope="col" class="text-end" style="width: 15%">Quantity</th>
+            <th scope="col" class="text-end" style="width: 15%">Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of order.orderDetails; let i = index">
+            <th scope="row">{{i + 1}}</th>
+            <td>{{item.productName}}</td>
+            <td>{{item.unitPrice}}</td>
+            <td class="text-end">{{item.quantity}}</td>
+            <td class="action">{{(item.quantity * item.unitPrice) | number : "1.2-2" }}</td>
+          </tr>
+          
+          
+        </tbody>
+      </table>
+    </div>
+    
+  </div>
+</div>

@@ -1,0 +1,296 @@
+.main-container{
+    position: relative;
+    .background-container{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        top: 0;
+        left: 0;
+        z-index: -100;
+        img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            animation: scaling 14s infinite;
+        }
+    }
+    .background-container::after{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        left: 0;
+        top: 0;
+    }
+
+    .cart-container{
+        padding: 200px 40px;
+    }
+}
+
+@keyframes scaling {
+    0%{
+        height: 100%;
+        width: 100%;
+    }
+    50%{
+        height: 110%;
+        width: 110%;
+        margin-left: -5%;
+        margin-top: -5%;
+    }
+    100%{
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.cart{
+    color: var(--color-one);
+    background-color: var(--background-two);
+    border-radius: 10px;
+    
+
+    .cart-header{
+        padding: 40px;
+        border-bottom: 1px solid var(--color-one-5);
+        .title{
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            font-family: 'Jost';
+            color: var(--primary-color);
+            span{
+                margin-left: 20px;
+            }
+        }
+    }
+
+    .cart-body{
+        label{
+            font-size: 14px;
+            font-family: 'Jost', sans-serif;
+            padding: 0 10px;
+        }
+        input, textarea{
+            background-color: var(--background-two);
+            border: 1px solid var(--color-one-25);
+            border-radius: 0;
+            color: var(--color-one);
+        }
+        input:focus, textarea:focus{
+            box-shadow: none;
+            border-color: var(--primary-color);
+        }
+
+        textarea::placeholder{
+            color: #a4a4a4;
+        }
+
+        .payment-section{
+            padding: 50px;
+            height: 100%;
+
+            border-right: 1px solid var(--color-one-5);
+            h4{
+                margin-bottom: 40px;
+            }
+            
+
+            .pay-btn{
+                padding: 0.4rem 1.4rem;
+                border-radius: 5px;
+                border: none;
+                background-color: var(--primary-color);
+                color: var(--color-two);
+
+                span:nth-child(1){
+                    font-family: 'Albert Sans';
+                    font-weight: bold;
+                }
+                span:nth-child(2){
+                    margin-left: 10px;
+                }
+            }
+        }
+
+        .cart-info-section{
+
+            .item-list-section{
+                padding: 50px;
+                border-bottom: 1px solid var(--color-one-5);
+
+                h4{
+                    font-family: 'Jost';
+                    margin-bottom: 40px;
+                }
+    
+                .cart-item-container{
+                    font-weight: 300;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 30px;
+                    max-height: 521px;
+                    overflow-y: scroll;
+                    padding-right: 10px;
+                    .cart-item{
+                        display: flex;
+                        .cart-img{
+                            width: 120px !important;
+                            height: 120px !important;
+                            img{
+                                border-radius: 7px;
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                        }
+                        .cart-info{
+                            flex: 1;
+                            padding-left: 20px;
+                            padding-right: 20px;
+                            display: flex;
+                            flex-direction: column;
+                            position: relative;
+                            h5{
+                                font-size: 18px;
+                                font-weight: 400;
+                                max-height: 43.2px;
+                                overflow: hidden;
+                            }
+                            textarea{
+                                padding: 0;
+                                border: none;
+                                resize: none;
+                                font-size: 12px;
+                            }
+                            .update-number-btn{
+                                border: none;
+                                background-color: var(--background-one);
+                                color: var(--color-one);
+                            }
+                            .number{
+                                margin: 0 10px;
+                            }
+    
+                            .price{
+                                font-family: 'Jost';
+                            }
+                        }
+                        .cart-close-btn{
+                            padding: 3px;
+                            button{
+                                background-color: transparent;
+                                border: none;
+                                padding: 0;
+                                color: var(--color-one);
+                                i{
+                                    font-size: 25px;
+                                    line-height: 0.8;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .discount-section{
+                padding: 50px;
+                border-bottom: 1px solid var(--color-one-5);
+
+                button{
+                    background-color: var(--primary-color);
+                    border: none;
+                    border-radius: 5px;
+                    padding: 0 1.4rem;
+                    font-family: 'Jost';
+                }
+            }
+
+            .summery-section{
+                padding: 50px;
+
+                .summery-description{
+                    display: flex;
+                    font-family: 'Jost';
+                    font-weight: 300;
+                    margin-bottom: 15px;
+                    .value{
+                        margin-left: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+table{
+    font-size: 14px;
+    
+    tr, th, td{
+        background: transparent;
+        color: var(--color-one) !important;
+        border-bottom-color: var(--color-one-25);
+    }
+    .action{
+        text-align: right;
+        .action-btn{
+            border: none;
+            background: transparent;
+            .update-btn{
+                color:rgb(51, 126, 193);
+                transition: .6s;
+            }
+            .delete-btn{
+                color: rgb(192, 51, 51);
+                transition: .6s;
+            }
+            .update-btn:hover{
+                color:rgb(21, 85, 141)
+            }
+            .delete-btn:hover{
+                color: rgb(144, 23, 23);
+            }
+        }
+    }
+}
+
+.input-bar{
+    width: 50vw;
+    margin-bottom: 30px;
+    height: 40px;
+    border-radius: 20px;
+    border: 1px solid var(--color-one-25);
+    background-color: #bcbcbc1d;
+    text-align: center;
+    color: var(--color-one);
+    font-family: 'Jost', sans-serif;
+}
+.input-bar::placeholder{
+    color: #9d9d9d;
+}
+.input-bar:focus{
+    outline: none;
+    box-shadow: 0 0 4px rgba(131, 131, 131, 0.682);
+}
+
+.btn-search{
+    padding: 0.35rem 3rem;
+    border-radius: 30px;
+    border: 1px solid var(--color-one-25);
+    background-color: var(--primary-color);
+    font-family: 'Jost';
+    font-weight: bold;
+    color: var(--color-two);
+    
+}
+
+
+
+@media (max-width: 768px){
+    .cart-container{
+        padding: 160px 0 !important;
+    }
+}

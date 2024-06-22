@@ -1,0 +1,12 @@
+.flex-container{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+
+@media (max-width: 992px){
+    form{
+        width: 100% ;
+    }
+}

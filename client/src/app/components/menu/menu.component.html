@@ -1,0 +1,219 @@
+<div class="welcome-section">
+  <div class="img-container">
+    <img src="assets/images/backgrounds/3.jpg" alt="" />
+  </div>
+  <div class="title">
+    <h1>Quick bites - Great tastes</h1>
+    <div class="text-center menu-btn-container mb-5">
+      <a class="menu-btn" href="#">Lets Explore</a>
+    </div>
+  </div>
+</div>
+
+<div class="filter-section">
+  <div class="filter-form-container">
+    <form class="filter-form" action="">
+      <img
+        class="decorating-background-item position-absolute opacity-25"
+        src="assets/images/ornaments/3.png"
+        alt=""
+        style="
+          right: -100px;
+          top: -100px;
+          transform: rotateZ(100deg);
+          z-index: -100;
+        "
+      />
+
+      <h2>What you are looking for?</h2>
+
+      <div class="form-item">
+        <input
+          type="text"
+          class="form-control filter-input"
+          id="filter-name"
+          name="filter-name"
+          placeholder="Key name"
+          [(ngModel)]="filterInfo.keyName"
+        />
+      </div>
+      <select
+        class="form-select form-item filter-input"
+        id="filter-category"
+        name="filter-category"
+        aria-label="Default select example"
+        [(ngModel)]="filterInfo.categoryId"
+      >
+        <option
+          *ngFor="let category of categories; let i = index"
+          value="{{ category.categoryId }}"
+        >
+          {{ category.name }}
+        </option>
+      </select>
+      <select
+        class="form-select form-item filter-input"
+        id="filter-price"
+        name="filter-price"
+        aria-label="Default select example"
+        [(ngModel)]="filterInfo.priceRange"
+      >
+        <option value="0-100" selected>All prices</option>
+        <option value="0-3">$0 - $3</option>
+        <option value="3-6">$3 - $6</option>
+        <option value="6-9">$6 - $9</option>
+        <option value="9-100">More than $9</option>
+      </select>
+      <div class="filter-form-controls">
+        <button type="button" class="button" (click)="refreshFilterInfo()">
+          <span class="button_lg">
+            <span class="button_sl"></span>
+            <span class="button_text">Refresh</span>
+          </span>
+        </button>
+        <button type="button" class="button" (click)="loadProducts()">
+          <span class="button_lg">
+            <span class="button_sl"></span>
+            <span class="button_text">Search</span>
+          </span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="menu-section">
+  <img
+    class="decorating-background-item position-absolute opacity-25"
+    src="assets/images/ornaments/2.png"
+    alt=""
+    style="left: -150px; top: 200px; transform: rotateZ(-90deg)"
+  />
+  <img
+    class="decorating-background-item position-absolute opacity-25"
+    src="assets/images/ornaments/5.png"
+    alt=""
+    style="right: -80px; top: 30%; transform: rotateZ(-45deg)"
+  />
+  <img
+    class="decorating-background-item position-absolute opacity-25"
+    src="assets/images/ornaments/6.png"
+    alt=""
+    style="left: 40%; bottom: -100px; transform: rotateZ(-45deg)"
+  />
+
+  <div class="title">
+    <h1>Delicious menu - Just enjoy what we offer you</h1>
+  </div>
+  <div class="sortnpaging-container z-3">
+    <div class="sort-form z-3">
+      <form class="" action="">
+        <select
+          class="form-select form-item filter-input"
+          id="filter-category"
+          aria-label="Default select example"
+          (change)="onSortOptionChange($event)"
+        >
+          <option value="nameAsc" selected>Name: a - z</option>
+          <option value="nameDesc">Name: z - a</option>
+          <option value="priceAsc">Price: a - z</option>
+          <option value="priceDesc">Price: z - a</option>
+        </select>
+      </form>
+    </div>
+    <nav class="ms-sm-auto pagination-nav" aria-label="Page navigation example">
+      <ul class="pagination m-0">
+        <li class="page-item" (click)="changePage(1)">
+          <a class="page-link"><span aria-hidden="true">&laquo;</span></a>
+        </li>
+        <li
+          class="page-item"
+          *ngIf="(page - 1) > 0"
+          (click)="changePage(page - 1)"
+        >
+          <a class="page-link">{{ page - 1 }}</a>
+        </li>
+        <li class="page-item" (click)="changePage(page)">
+          <a class="page-link active">{{ page }}</a>
+        </li>
+        <li
+          class="page-item"
+          *ngIf="(page + 1) <= maxPageNumber"
+          (click)="changePage(page + 1)"
+        >
+          <a class="page-link">{{ page + 1 }}</a>
+        </li>
+        <li class="page-item"  (click)="changePage(maxPageNumber)">
+          <a class="page-link"
+            ><span aria-hidden="true">&raquo;</span></a
+          >
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+
+  <div class="food-list">
+    <div class="row gx-5 gy-5">
+      <div
+        class="col-12 col-md-6 col-lg-3"
+        *ngFor="
+          let item of products
+            | paginate : { itemsPerPage: itemsPerPage, currentPage: page }
+        "
+      >
+        <div class="card">
+          <div class="card-header">
+            <img [src]="getImgUrl(item.imgUrl)" alt="..." />
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{ item.name }}</h5>
+            <p class="card-text">{{ item.description }}</p>
+            <div class="price-section">
+              <span>{{ item.price }}</span>
+              <span class="first-price">{{ item.price + 0.5 }}</span>
+            </div>
+            <div class="card-controls">
+              <div>
+                <button (click)="addToCart(item)">Add item</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="sortnpaging-container">
+    <nav class="ms-sm-auto pagination-nav" aria-label="Page navigation example">
+      <ul class="pagination m-0">
+        <li class="page-item" (click)="changePage(1)">
+          <a class="page-link"><span aria-hidden="true">&laquo;</span></a>
+        </li>
+        <li
+          class="page-item"
+          *ngIf="(page - 1) > 0"
+          (click)="changePage(page - 1)"
+        >
+          <a class="page-link">{{ page - 1 }}</a>
+        </li>
+        <li class="page-item" (click)="changePage(page)">
+          <a class="page-link active">{{ page }}</a>
+        </li>
+        <li
+          class="page-item"
+          *ngIf="(page + 1) <= maxPageNumber"
+          (click)="changePage(page + 1)"
+        >
+          <a class="page-link">{{ page + 1 }}</a>
+        </li>
+        <li class="page-item"  (click)="changePage(maxPageNumber)">
+          <a class="page-link"
+            ><span aria-hidden="true">&raquo;</span></a
+          >
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>

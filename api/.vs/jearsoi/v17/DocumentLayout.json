@@ -1,0 +1,184 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\CONG HAU\\Desktop\\FPT2024\\NET105\\Asm\\ps35740_VuNguyenCongHau_Asm\\api\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DB282812-46C9-4053-AC91-DD6ABD27E32F}|jearsoi\\jearsoi.csproj|c:\\users\\cong hau\\desktop\\fpt2024\\net105\\asm\\ps35740_vunguyenconghau_asm\\api\\jearsoi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB282812-46C9-4053-AC91-DD6ABD27E32F}|jearsoi\\jearsoi.csproj|solutionrelative:jearsoi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB282812-46C9-4053-AC91-DD6ABD27E32F}|jearsoi\\jearsoi.csproj|C:\\Users\\CONG HAU\\Desktop\\FPT2024\\NET105\\Asm\\ps35740_VuNguyenCongHau_Asm\\api\\jearsoi\\services\\implements\\accountsvc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB282812-46C9-4053-AC91-DD6ABD27E32F}|jearsoi\\jearsoi.csproj|solutionrelative:jearsoi\\services\\implements\\accountsvc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB282812-46C9-4053-AC91-DD6ABD27E32F}|jearsoi\\jearsoi.csproj|c:\\users\\cong hau\\desktop\\fpt2024\\net105\\asm\\ps35740_vunguyenconghau_asm\\api\\jearsoi\\models\\db\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB282812-46C9-4053-AC91-DD6ABD27E32F}|jearsoi\\jearsoi.csproj|solutionrelative:jearsoi\\models\\db\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB282812-46C9-4053-AC91-DD6ABD27E32F}|jearsoi\\jearsoi.csproj|c:\\users\\cong hau\\desktop\\fpt2024\\net105\\asm\\ps35740_vunguyenconghau_asm\\api\\jearsoi\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB282812-46C9-4053-AC91-DD6ABD27E32F}|jearsoi\\jearsoi.csproj|solutionrelative:jearsoi\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB282812-46C9-4053-AC91-DD6ABD27E32F}|jearsoi\\jearsoi.csproj|C:\\Users\\CONG HAU\\Desktop\\FPT2024\\NET105\\Asm\\ps35740_VuNguyenCongHau_Asm\\api\\jearsoi\\helpers\\dtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB282812-46C9-4053-AC91-DD6ABD27E32F}|jearsoi\\jearsoi.csproj|solutionrelative:jearsoi\\helpers\\dtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB282812-46C9-4053-AC91-DD6ABD27E32F}|jearsoi\\jearsoi.csproj|C:\\Users\\CONG HAU\\Desktop\\FPT2024\\NET105\\Asm\\ps35740_VuNguyenCongHau_Asm\\api\\jearsoi\\models\\db\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB282812-46C9-4053-AC91-DD6ABD27E32F}|jearsoi\\jearsoi.csproj|solutionrelative:jearsoi\\models\\db\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB282812-46C9-4053-AC91-DD6ABD27E32F}|jearsoi\\jearsoi.csproj|C:\\Users\\CONG HAU\\Desktop\\FPT2024\\NET105\\Asm\\ps35740_VuNguyenCongHau_Asm\\api\\jearsoi\\services\\implements\\ordersvc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB282812-46C9-4053-AC91-DD6ABD27E32F}|jearsoi\\jearsoi.csproj|solutionrelative:jearsoi\\services\\implements\\ordersvc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB282812-46C9-4053-AC91-DD6ABD27E32F}|jearsoi\\jearsoi.csproj|C:\\Users\\CONG HAU\\Desktop\\FPT2024\\NET105\\Asm\\ps35740_VuNguyenCongHau_Asm\\api\\jearsoi\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB282812-46C9-4053-AC91-DD6ABD27E32F}|jearsoi\\jearsoi.csproj|solutionrelative:jearsoi\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB282812-46C9-4053-AC91-DD6ABD27E32F}|jearsoi\\jearsoi.csproj|C:\\Users\\CONG HAU\\Desktop\\FPT2024\\NET105\\Asm\\ps35740_VuNguyenCongHau_Asm\\api\\jearsoi\\services\\interfaces\\iordersvc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB282812-46C9-4053-AC91-DD6ABD27E32F}|jearsoi\\jearsoi.csproj|solutionrelative:jearsoi\\services\\interfaces\\iordersvc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB282812-46C9-4053-AC91-DD6ABD27E32F}|jearsoi\\jearsoi.csproj|C:\\Users\\CONG HAU\\Desktop\\FPT2024\\NET105\\Asm\\ps35740_VuNguyenCongHau_Asm\\api\\jearsoi\\models\\dtos\\orderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB282812-46C9-4053-AC91-DD6ABD27E32F}|jearsoi\\jearsoi.csproj|solutionrelative:jearsoi\\models\\dtos\\orderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 430,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\CONG HAU\\Desktop\\FPT2024\\NET105\\Asm\\ps35740_VuNguyenCongHau_Asm\\api\\jearsoi\\Program.cs",
+              "RelativeDocumentMoniker": "jearsoi\\Program.cs",
+              "ToolTip": "C:\\Users\\CONG HAU\\Desktop\\FPT2024\\NET105\\Asm\\ps35740_VuNguyenCongHau_Asm\\api\\jearsoi\\Program.cs",
+              "RelativeToolTip": "jearsoi\\Program.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAAAB0AAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T11:58:22.192Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Category.cs",
+              "DocumentMoniker": "C:\\Users\\CONG HAU\\Desktop\\FPT2024\\NET105\\Asm\\ps35740_VuNguyenCongHau_Asm\\api\\jearsoi\\Models\\Db\\Category.cs",
+              "RelativeDocumentMoniker": "jearsoi\\Models\\Db\\Category.cs",
+              "ToolTip": "C:\\Users\\CONG HAU\\Desktop\\FPT2024\\NET105\\Asm\\ps35740_VuNguyenCongHau_Asm\\api\\jearsoi\\Models\\Db\\Category.cs",
+              "RelativeToolTip": "jearsoi\\Models\\Db\\Category.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T12:33:54.173Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DTOValidator.cs",
+              "DocumentMoniker": "C:\\Users\\CONG HAU\\Desktop\\FPT2024\\NET105\\Asm\\ps35740_VuNguyenCongHau_Asm\\api\\jearsoi\\Helpers\\DTOValidator.cs",
+              "RelativeDocumentMoniker": "jearsoi\\Helpers\\DTOValidator.cs",
+              "ToolTip": "C:\\Users\\CONG HAU\\Desktop\\FPT2024\\NET105\\Asm\\ps35740_VuNguyenCongHau_Asm\\api\\jearsoi\\Helpers\\DTOValidator.cs",
+              "RelativeToolTip": "jearsoi\\Helpers\\DTOValidator.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-17T01:34:20.438Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AccountSVC.cs",
+              "DocumentMoniker": "C:\\Users\\CONG HAU\\Desktop\\FPT2024\\NET105\\Asm\\ps35740_VuNguyenCongHau_Asm\\api\\jearsoi\\Services\\Implements\\AccountSVC.cs",
+              "RelativeDocumentMoniker": "jearsoi\\Services\\Implements\\AccountSVC.cs",
+              "ToolTip": "C:\\Users\\CONG HAU\\Desktop\\FPT2024\\NET105\\Asm\\ps35740_VuNguyenCongHau_Asm\\api\\jearsoi\\Services\\Implements\\AccountSVC.cs",
+              "RelativeToolTip": "jearsoi\\Services\\Implements\\AccountSVC.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAKUAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T08:43:49.937Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\CONG HAU\\Desktop\\FPT2024\\NET105\\Asm\\ps35740_VuNguyenCongHau_Asm\\api\\jearsoi\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "jearsoi\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\CONG HAU\\Desktop\\FPT2024\\NET105\\Asm\\ps35740_VuNguyenCongHau_Asm\\api\\jearsoi\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "jearsoi\\Controllers\\AccountController.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAAAAsAAABHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T08:38:29.188Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IOrderSVC.cs",
+              "DocumentMoniker": "C:\\Users\\CONG HAU\\Desktop\\FPT2024\\NET105\\Asm\\ps35740_VuNguyenCongHau_Asm\\api\\jearsoi\\Services\\Interfaces\\IOrderSVC.cs",
+              "RelativeDocumentMoniker": "jearsoi\\Services\\Interfaces\\IOrderSVC.cs",
+              "ToolTip": "C:\\Users\\CONG HAU\\Desktop\\FPT2024\\NET105\\Asm\\ps35740_VuNguyenCongHau_Asm\\api\\jearsoi\\Services\\Interfaces\\IOrderSVC.cs",
+              "RelativeToolTip": "jearsoi\\Services\\Interfaces\\IOrderSVC.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAArwA4AAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T07:10:19.647Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "OrderSVC.cs",
+              "DocumentMoniker": "C:\\Users\\CONG HAU\\Desktop\\FPT2024\\NET105\\Asm\\ps35740_VuNguyenCongHau_Asm\\api\\jearsoi\\Services\\Implements\\OrderSVC.cs",
+              "RelativeDocumentMoniker": "jearsoi\\Services\\Implements\\OrderSVC.cs",
+              "ToolTip": "C:\\Users\\CONG HAU\\Desktop\\FPT2024\\NET105\\Asm\\ps35740_VuNguyenCongHau_Asm\\api\\jearsoi\\Services\\Implements\\OrderSVC.cs",
+              "RelativeToolTip": "jearsoi\\Services\\Implements\\OrderSVC.cs",
+              "ViewState": "AQIAAPMAAAAAAAAAAAAlwA4BAACUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T06:22:55.354Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "OrderDTO.cs",
+              "DocumentMoniker": "C:\\Users\\CONG HAU\\Desktop\\FPT2024\\NET105\\Asm\\ps35740_VuNguyenCongHau_Asm\\api\\jearsoi\\Models\\DTOs\\OrderDTO.cs",
+              "RelativeDocumentMoniker": "jearsoi\\Models\\DTOs\\OrderDTO.cs",
+              "ToolTip": "C:\\Users\\CONG HAU\\Desktop\\FPT2024\\NET105\\Asm\\ps35740_VuNguyenCongHau_Asm\\api\\jearsoi\\Models\\DTOs\\OrderDTO.cs",
+              "RelativeToolTip": "jearsoi\\Models\\DTOs\\OrderDTO.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAwwBcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T06:19:59.595Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "C:\\Users\\CONG HAU\\Desktop\\FPT2024\\NET105\\Asm\\ps35740_VuNguyenCongHau_Asm\\api\\jearsoi\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "jearsoi\\Controllers\\OrderController.cs",
+              "ToolTip": "C:\\Users\\CONG HAU\\Desktop\\FPT2024\\NET105\\Asm\\ps35740_VuNguyenCongHau_Asm\\api\\jearsoi\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "jearsoi\\Controllers\\OrderController.cs",
+              "ViewState": "AQIAAEwAAAAAAAAAAAAnwG0AAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T06:34:09.602Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Order.cs",
+              "DocumentMoniker": "C:\\Users\\CONG HAU\\Desktop\\FPT2024\\NET105\\Asm\\ps35740_VuNguyenCongHau_Asm\\api\\jearsoi\\Models\\Db\\Order.cs",
+              "RelativeDocumentMoniker": "jearsoi\\Models\\Db\\Order.cs",
+              "ToolTip": "C:\\Users\\CONG HAU\\Desktop\\FPT2024\\NET105\\Asm\\ps35740_VuNguyenCongHau_Asm\\api\\jearsoi\\Models\\Db\\Order.cs",
+              "RelativeToolTip": "jearsoi\\Models\\Db\\Order.cs",
+              "ViewState": "AQIAABcAAAAAAAAAAAAIwCUAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T06:16:45.853Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

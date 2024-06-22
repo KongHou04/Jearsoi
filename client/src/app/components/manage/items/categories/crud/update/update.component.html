@@ -1,0 +1,121 @@
+<button
+  class="btn btn-primary d-flex align-items-center"
+  (click)="switchToListView()"
+>
+  <i class="fa-solid fa-arrow-left align-middle"></i>
+  <span class="mb-0 ms-2 ff-roboto">Go back</span>
+</button>
+
+<div class="flex-container">
+  <form
+    class="my-5 crud-form"
+    (ngSubmit)="onSubmit($event)"
+  >
+    <h5 class="mb-4" style="font-family: 'Roboto'">
+      Update category's information
+    </h5>
+    <div class="mb-4">
+      <label for="update-category-name" class="form-label">Category Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="update-category-name"
+        name="update-category-name"
+        required
+        [(ngModel)]="category.name"
+      />
+    </div>
+    <div class="mb-4">
+      <label for="update-category-status" class="form-label">Status</label>
+      <select
+        class="form-select form-item filter-input"
+        id="update-category-status"
+        name="update-category-status"
+        aria-label="Default select example"
+        required
+        [(ngModel)]="category.status"
+      >
+        <option value="0" selected>Operating</option>
+        <option value="1">Closed</option>
+      </select>
+    </div>
+    <div class="mb-4">
+      <label for="update-category-description" class="form-label"
+        >Description</label
+      >
+      <textarea
+        class="form-control"
+        id="update-category-description"
+        name="update-category-description"
+        required
+        [(ngModel)]="category.description"
+      ></textarea>
+    </div>
+    <div class="mt-5">
+      <button type="submit" #submitBtn class="btn btn-success d-none">Submit</button>
+      <button
+        type="button"
+        class="btn btn-warning px-5"
+        (click)="resetToDefault()"
+      >
+        Reset
+      </button>
+      <button type="button" class="btn btn-success px-5 ms-3" (click)="openUpdateModal()">Save</button>
+    </div>
+  </form>
+</div>
+
+<ng-template #updateConfirmModal let-modal>
+  <div class="app-modal">
+    <div class="modal-header">
+      <h5 class="modal-title">Confirm Updation</h5>
+      <button
+        type="button"
+        class="close-btn"
+        (click)="modal.dismiss('Cross click')"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="fw-bold">
+        Are you sure you want to update
+        <span class="text-success fw-bold">"{{ category.name }}"</span>
+        category?
+      </div>
+      <div class="mt-2" style="font-size: 14px">
+        <span>
+          All products associated to this category will be permanently
+          updated.
+        </span>
+        <span class="text-danger"> This operation can not be undone. </span>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button
+        type="button"
+        class="btn btn-secondary"
+        (click)="modal.dismiss('Cancel click')"
+      >
+        Cancel
+      </button>
+      <button
+        type="button"
+        class="btn btn-primary"
+        (click)="confirmUpdate(modal)"
+      >
+        Update
+      </button>
+    </div>
+  </div>
+</ng-template>
+
+<div
+  *ngIf="notificationVisible"
+  style="position: fixed; right: 20px; bottom: 20px; z-index: 1000"
+>
+  <app-notification
+    [title]="notification.title"
+    [message]="notification.message"
+  ></app-notification>
+</div>

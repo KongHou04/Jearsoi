@@ -1,0 +1,60 @@
+<div class="control-container z-3">
+  <button class="btn btn-success" (click)="loadHistory()">Refresh</button>
+  <input type="date" class="form-control ms-auto" style="cursor: pointer;">
+</div>
+
+<div class="list-container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col" style="width: 20%">Order Time</th>
+        <th class="text-end" scope="col" style="width: 10%">Phone number</th>
+        <th class="text-end" scope="col" style="width: 25%">Address</th>
+        <th class="text-end" scope="col" style="width: 15%">Total</th>
+        <th class="text-end" scope="col" style="width: 15%">Delivery</th>
+        <th class="text-end" scope="col" style="width: 15%">Payment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="hover-bg-1" *ngFor="let item of orders; let i = index" (click)="switchToDetailsView(item)">
+        <td>{{item.orderTime}}</td>
+        <td class="text-end">{{item.phone}}</td>
+        <td class="text-end">{{item.address}}</td>
+        <td class="text-end">{{item.total}}</td>
+        <td class="text-end" [ngSwitch]="item.deliveryStatus">
+          <span *ngSwitchCase="0">In queue</span>
+          <span *ngSwitchCase="1">In Transmit</span>
+          <span *ngSwitchCase="2">Delivered</span>
+          <span *ngSwitchDefault >Canceled</span>
+        </td>
+        <td class="text-end" [ngSwitch]="item.paymentStatus">
+          <span *ngSwitchCase="0">Did'n pay</span>
+          <span *ngSwitchCase="1">Success</span>
+          <span *ngSwitchDefault>Canceled</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="control-container z-3">
+  <nav class="ms-auto pagination-nav" aria-label="Page navigation example">
+    <ul class="pagination m-0">
+      <li class="page-item">
+        <a class="page-link" href="#"
+          ><span aria-hidden="true">&laquo;</span></a
+        >
+      </li>
+      <li class="page-item">
+        <a class="page-link active" href="#">1</a>
+      </li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item">
+        <a class="page-link" href="#"
+          ><span aria-hidden="true">&raquo;</span></a
+        >
+      </li>
+    </ul>
+  </nav>
+</div>

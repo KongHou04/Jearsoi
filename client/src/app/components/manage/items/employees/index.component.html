@@ -1,0 +1,21 @@
+<div [ngSwitch]="view">
+  <div *ngSwitchCase="'details'">
+    <employee-details
+      (switchToListViewFunc)="setView('list')"
+    ></employee-details>
+  </div>
+  <div *ngSwitchCase="'add'">
+    <employee-add (switchToListViewFunc)="setView('list')"></employee-add>
+  </div>
+  <div *ngSwitchCase="'update'">
+    <employee-update (switchToListViewFunc)="setView('list')"></employee-update>
+  </div>
+  <div *ngSwitchDefault>
+    <employee-list
+      (switchToDetailsViewFunc)="setView('details')"
+      (switchToAddViewFunc)="setView('add')"
+      (switchToUpdateViewFunc)="setView('update')"
+    >
+    </employee-list>
+  </div>
+</div>

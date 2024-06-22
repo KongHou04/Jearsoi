@@ -1,0 +1,89 @@
+<div class="main-container">
+  <div class="background-container">
+    <img src="assets/images/slides/6.jpg" alt="" />
+  </div>
+
+  <div class="board-container">
+    <div class="board">
+      <div class="board-header">
+        <div class="title">
+          <!-- <img src="assets/images/menus/1.jpg" alt="" /> -->
+          <h2 class="d-none d-md-block">{{ title }}</h2>
+
+          <div class="nav-bar ms-auto me-auto me-md-0">
+            <ul class="nav" id="myTab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link active"
+                  id="0-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#0-tab-pane"
+                  aria-selected="true"
+                  (click)="setTitle('Orders')"
+                >
+                  <i class="fa-solid fa-truck-fast"></i>
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="3-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#3-tab-pane"
+                  aria-selected="false"
+                  (click)="setTitle('History')"
+                >
+                  <i class="fa-solid fa-clock"></i>
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="6-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#6-tab-pane"
+                  aria-selected="false"
+                  (click)="setTitle('Settings')"
+                >
+                  <i class="fa-solid fa-gear"></i>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="board-body row gx-0">
+        <div class="tab-content" id="myTabContent">
+          <div
+            class="tab-pane fade show active"
+            id="0-tab-pane"
+            role="tabpanel"
+            aria-labelledby="0-tab"
+            tabindex="0"
+          >
+            <order-manage-board></order-manage-board>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="3-tab-pane"
+            role="tabpanel"
+            aria-labelledby="3-tab"
+            tabindex="0"
+          >
+            <history-manage-board></history-manage-board>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="6-tab-pane"
+            role="tabpanel"
+            aria-labelledby="6-tab"
+            tabindex="0"
+          >
+            <setting-board></setting-board>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

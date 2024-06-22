@@ -1,0 +1,65 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\CONG HAU\\Desktop\\FPT2024\\NET105\\Asm\\ps35740_VuNguyenCongHau_Asm\\api\\jearsoi\\wwwroot\\menus\\1.jpg",
+      "PackagePath": "staticwebassets\\menus\\1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\CONG HAU\\Desktop\\FPT2024\\NET105\\Asm\\ps35740_VuNguyenCongHau_Asm\\api\\jearsoi\\wwwroot\\menus\\2.jpg",
+      "PackagePath": "staticwebassets\\menus\\2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\CONG HAU\\Desktop\\FPT2024\\NET105\\Asm\\ps35740_VuNguyenCongHau_Asm\\api\\jearsoi\\wwwroot\\menus\\3.jpg",
+      "PackagePath": "staticwebassets\\menus\\3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\CONG HAU\\Desktop\\FPT2024\\NET105\\Asm\\ps35740_VuNguyenCongHau_Asm\\api\\jearsoi\\wwwroot\\menus\\321548f2-c097-4b6d-a25b-9b51fec7303c.jpg",
+      "PackagePath": "staticwebassets\\menus\\321548f2-c097-4b6d-a25b-9b51fec7303c.jpg"
+    },
+    {
+      "Id": "C:\\Users\\CONG HAU\\Desktop\\FPT2024\\NET105\\Asm\\ps35740_VuNguyenCongHau_Asm\\api\\jearsoi\\wwwroot\\menus\\4.jpg",
+      "PackagePath": "staticwebassets\\menus\\4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\CONG HAU\\Desktop\\FPT2024\\NET105\\Asm\\ps35740_VuNguyenCongHau_Asm\\api\\jearsoi\\wwwroot\\menus\\5.jpg",
+      "PackagePath": "staticwebassets\\menus\\5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\CONG HAU\\Desktop\\FPT2024\\NET105\\Asm\\ps35740_VuNguyenCongHau_Asm\\api\\jearsoi\\wwwroot\\menus\\c15a9c27-7223-494d-95bb-e00725fe572c.jpg",
+      "PackagePath": "staticwebassets\\menus\\c15a9c27-7223-494d-95bb-e00725fe572c.jpg"
+    },
+    {
+      "Id": "C:\\Users\\CONG HAU\\Desktop\\FPT2024\\NET105\\Asm\\ps35740_VuNguyenCongHau_Asm\\api\\jearsoi\\wwwroot\\menus\\c57e8846-e56b-49a0-99de-baf9178b8675.jpg",
+      "PackagePath": "staticwebassets\\menus\\c57e8846-e56b-49a0-99de-baf9178b8675.jpg"
+    },
+    {
+      "Id": "C:\\Users\\CONG HAU\\Desktop\\FPT2024\\NET105\\Asm\\ps35740_VuNguyenCongHau_Asm\\api\\jearsoi\\wwwroot\\menus\\e78586a9-7017-4b37-89de-b577fc35d454.jpg",
+      "PackagePath": "staticwebassets\\menus\\e78586a9-7017-4b37-89de-b577fc35d454.jpg"
+    },
+    {
+      "Id": "C:\\Users\\CONG HAU\\Desktop\\FPT2024\\NET105\\Asm\\ps35740_VuNguyenCongHau_Asm\\api\\jearsoi\\wwwroot\\menus\\f4dd33d9-68e5-4ff6-a6a1-bddf34a383e4.jpg",
+      "PackagePath": "staticwebassets\\menus\\f4dd33d9-68e5-4ff6-a6a1-bddf34a383e4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\CONG HAU\\Desktop\\FPT2024\\NET105\\Asm\\ps35740_VuNguyenCongHau_Asm\\api\\jearsoi\\wwwroot\\menus\\fb647f0e-2441-4c4f-bbb0-0a7a424239ef.jpg",
+      "PackagePath": "staticwebassets\\menus\\fb647f0e-2441-4c4f-bbb0-0a7a424239ef.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.jearsoi.props",
+      "PackagePath": "build\\jearsoi.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.jearsoi.props",
+      "PackagePath": "buildMultiTargeting\\jearsoi.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.jearsoi.props",
+      "PackagePath": "buildTransitive\\jearsoi.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.jearsoi.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

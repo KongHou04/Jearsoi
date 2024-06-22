@@ -1,0 +1,9 @@
+<div [ngSwitch]="view">
+  <div *ngSwitchCase="'details'">
+    <history-details [order]="selectedOrder" (switchToListViewFunc)="setView('list')"></history-details>
+  </div>
+  <div *ngSwitchDefault>
+    <history-list (switchToDetailsViewFunc)="switchToDetails($event)"></history-list>
+    <!-- <app-order-information></app-order-information> -->
+  </div>
+</div>

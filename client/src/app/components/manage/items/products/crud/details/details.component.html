@@ -1,0 +1,164 @@
+<button
+  class="btn btn-primary d-flex align-items-center"
+  (click)="switchToListView()"
+>
+  <i class="fa-solid fa-arrow-left align-middle"></i>
+  <span class="mb-0 ms-2 ff-roboto">Go back</span>
+</button>
+
+<div *ngIf="!isProductDeleted">
+  <div class="row gx-5">
+    <div class="col-lg-7">
+      <form class="py-5 crud-form w-100">
+        <h5 class="mb-4" style="font-family: 'Roboto'">Product Information</h5>
+        <div class="mb-4">
+          <label for="add-product-name" class="form-label">Product Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="add-product-name"
+            name="add-product-name"
+            value="{{ product.name }}"
+            disabled
+          />
+        </div>
+
+        <div class="mb-4 d-flex gap-3">
+          <div style="flex: 1">
+            <label for="add-product-category" class="form-label"
+              >Category</label
+            >
+            <select
+              class="form-select form-item filter-input"
+              id="add-product-category"
+              name="add-product-category"
+              aria-label="Default select example"
+              disabled
+            >
+              <option
+                [value]="item.categoryId"
+                *ngFor="let item of categories; let i = index"
+                [selected]="product.categoryId == item.categoryId"
+              >
+                {{ item.name }}
+              </option>
+            </select>
+          </div>
+
+          <div style="flex: 1">
+            <label for="add-product-price" class="form-label">Unit price</label>
+            <input
+              type="number"
+              class="form-control"
+              id="add-product-price"
+              name="add-product-price"
+              value="{{ product.price }}"
+              disabled
+            />
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <label for="add-product-status" class="form-label">Status</label>
+          <input
+            type="text"
+            class="form-control"
+            id="add-product-status"
+            name="add-product-status"
+            value="{{ product.status == 0 ? 'Operating' : 'Closed' }}"
+            disabled
+          />
+        </div>
+        <div class="mb-4">
+          <label for="add-product-description" class="form-label"
+            >Description</label
+          >
+          <textarea
+            class="form-control"
+            id="add-product-description"
+            disabled
+            name="add-product-description"
+            >{{ product.description }}</textarea
+          >
+        </div>
+        <div class="mt-5">
+          <button
+            type="button"
+            class="btn btn-success px-5"
+            (click)="switchToUpdateView()"
+          >
+            Update
+          </button>
+          <button
+            type="button"
+            class="btn btn-danger px-5 ms-3"
+            (click)="openDeleteModal()"
+          >
+            Delete
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="col-lg-5">
+      <div class="py-5">
+        <h5 class="mb-4">Card template</h5>
+        <div class="mb-5">
+          <app-card-1></app-card-1>
+        </div>
+        <div style="max-width: 250px">
+          <app-card-2></app-card-2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #deleteConfirmModal let-modal>
+    <div class="app-modal">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirm Deletion</h5>
+        <button
+          type="button"
+          class="close-btn"
+          (click)="modal.dismiss('Cross click')"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="fw-bold">
+          Are you sure you want to delete
+          <span class="text-success fw-bold">"{{ product.name }}"</span>
+          category?
+        </div>
+        <div class="mt-2" style="font-size: 14px">
+          <span>
+            All information about this product will permanently deleted. You
+            cannot check this product in old orders but the price and name still
+            be saved.
+          </span>
+          <span class="text-danger"> This operation can not be undone. </span>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          (click)="modal.dismiss('Cancel click')"
+        >
+          Cancel
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger"
+          (click)="confirmDelete(modal)"
+        >
+          Delete
+        </button>
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+<div class="my-5" *ngIf="isProductDeleted">
+  <h5>The product has been delete</h5>
+</div>
